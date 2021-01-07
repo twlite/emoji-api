@@ -21,6 +21,7 @@ emoji.get("😂")
 /*
 Emoji {
   emoji: '😂',
+  unicode: 'U+1F602',
   name: 'Face with Tears of Joy',
   description: 'A yellow face with a big grin, uplifted eyebrows, and smiling eyes, each shedding a tear from laughing so hard. Widely used to show something is funny or pleasing.',
   images: [

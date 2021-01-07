@@ -1,7 +1,7 @@
 {
   "name": "emoji-api",
   "version": "1.0.1",
-  "description": "Node.js Emoji API",
+  "description": "Simple Emoji API",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {

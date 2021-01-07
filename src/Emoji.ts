@@ -15,6 +15,7 @@ class Emoji {
 
     _patch(data: any) {
         this.emoji = data.emoji || null;
+        this.unicode = data.unicode ? `U+${String(data.unicode).toUpperCase()}` : null;
         this.name = data.name || null;
         this.description = data.description || null;
         this.images = data.images || [];
@@ -105,6 +106,7 @@ class Emoji {
         return {
             emoji: this.emoji,
             name: this.name,
+            unicode: this.unicode,
             description: this.description,
             images: this.images,
             shortCodes: this.shortCodes
