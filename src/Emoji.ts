@@ -113,4 +113,4 @@ class Emoji {
     }
 }
 
-export { Emoji }
+export { Emoji };
