@@ -1,4 +1,4 @@
-import { Parser, EmojiRawData, EmojiImage } from "./Parser"
+import { Parser, EmojiRawData, EmojiImage } from "./Parser";
 import { Emoji } from "./Emoji";
 
 class EmojiAPI {
@@ -31,5 +31,5 @@ class EmojiAPI {
 
 }
 
-export { EmojiAPI, Parser, EmojiRawData, EmojiImage, Emoji }
+export { EmojiAPI, Parser, EmojiRawData, EmojiImage, Emoji };
 export default EmojiAPI;
