@@ -1,5 +1,5 @@
-import fetch from "node-fetch";
 import { JSDOM } from "jsdom";
+import fetch from "node-fetch";
 
 const BASE_URL = "https://emojipedia.org";
 
@@ -21,14 +21,9 @@ export interface EmojiImage {
 export class Parser {
 
     static async getHTML(emoji: string): Promise<string> {
-        try {
-            const data = await fetch(`${BASE_URL}/${encodeURIComponent(emoji)}`);
-            const res = await data.text();
-
-            return res;
-        } catch {
-            return null;
-        }
+        const url = `${BASE_URL}/${encodeURIComponent(emoji)}`;
+        const res = await fetch(url).then(r => r.text(), () => null);
+        return res;
     }
 
     static fetchData(html: string) {
@@ -49,19 +44,19 @@ export class Parser {
             const vendor = vendors[i];
 
             const title = vendor.querySelector("a").textContent.trim();
-            const vendorurl = vendor.querySelector("img").src;
+            const vendorURL = vendor.querySelector("img").src;
 
             res.images.push({
                 index: i,
                 vendor: title,
-                url: vendorurl
+                url: vendorURL
             });
         }
 
-        const shortcodes = document.querySelector('ul[class="shortcodes"]').querySelectorAll('span[class="shortcode"]');
+        const shortCodes = document.querySelector('ul[class="shortcodes"]').querySelectorAll('span[class="shortcode"]');
 
-        for (let i = 0; i < shortcodes.length; i++) {
-            let r = shortcodes[i];
+        for (let i = 0; i < shortCodes.length; i++) {
+            let r = shortCodes[i];
             res.shortCodes.push(r.textContent.trim());
         }
 

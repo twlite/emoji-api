@@ -6,7 +6,8 @@
 		"strict": true,
 		"strictNullChecks": false,
 		"esModuleInterop": true,
-		"outDir": "./build/"
+		"outDir": "./build/",
+		"experimentalDecorators": true
 	},
 	"files": [
 		"src/Parser.ts",

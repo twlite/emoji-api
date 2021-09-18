@@ -1,12 +1,23 @@
 import { Parser, EmojiRawData, EmojiImage } from "./Parser"
 import { Emoji } from "./Emoji";
+import { singleton } from "./decorators/Singleton";
+import Collection from "./Collection";
 
+@singleton
 class EmojiAPI {
+    public cache = new Collection<string, Emoji>();
 
-    async get(emoji: string): Promise<Emoji> {
+    async get(emoji: string, force = false): Promise<Emoji> {
+        if (!force) {
+            const cached = this.cache.findOne(emoji);
+            if (cached) return cached;
+        }
+
         const basicInfo = await this.getBasicInfo(emoji);
-
-        return new Emoji(basicInfo || {});
+        if (!basicInfo) throw new Error("Emoji not found!");
+        const em = new Emoji(basicInfo);
+        this.cache.set(emoji, em);
+        return em;
     }
 
     async getBasicInfo(emoji: string): Promise<EmojiRawData> {
