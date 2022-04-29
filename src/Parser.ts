@@ -53,7 +53,7 @@ export class Parser {
             });
         }
 
-        const shortCodes = document.querySelector('ul[class="shortcodes"]').querySelectorAll('span[class="shortcode"]');
+        const shortCodes = document.querySelectorAll('span[class="shortcode"]');
 
         for (let i = 0; i < shortCodes.length; i++) {
             let r = shortCodes[i];
