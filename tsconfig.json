@@ -7,7 +7,7 @@
 		"strictNullChecks": false,
 		"esModuleInterop": true,
 		"outDir": "./build/",
-		"experimentalDecorators": true
+		"resolveJsonModule": true
 	},
 	"files": [
 		"src/Parser.ts",

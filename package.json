@@ -1,18 +1,20 @@
 {
   "name": "emoji-api",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Simple Emoji API",
   "main": "build/index.js",
+  "module": "build/index.mjs",
   "types": "build/index.d.ts",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "build": "tsc",
-    "test": "yarn build && cd test && node index.js",
-    "prepublishOnly": "rollup-type-bundler -d build"
+    "build": "tsup",
+    "test": "npm run build && cd test && node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevSnowflake/emoji-api.git"
+    "url": "git+https://github.com/Archaeopteryx1/emoji-api.git"
   },
   "keywords": [
     "emoji",
@@ -20,21 +22,15 @@
     "parser",
     "emoji-parser"
   ],
-  "author": "DevAndromeda",
+  "author": "Archaeopteryx1",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/DevSnowflake/emoji-api/issues"
+    "url": "https://github.com/Archaeopteryx1/emoji-api/issues"
   },
-  "homepage": "https://github.com/DevSnowflake/emoji-api#readme",
-  "dependencies": {
-    "jsdom": "^17.0.0",
-    "node-fetch": "^2.6.2"
-  },
+  "homepage": "https://github.com/Archaeopteryx1/emoji-api#readme",
   "devDependencies": {
-    "@favware/rollup-type-bundler": "^1.0.3",
-    "@types/jsdom": "^16.2.13",
-    "@types/node": "^16.9.2",
-    "@types/node-fetch": "^2.5.12",
+    "@types/node": "^18.7.23",
+    "tsup": "^6.2.3",
     "typescript": "^4.4.3"
   }
 }
