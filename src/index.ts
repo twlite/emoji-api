@@ -74,7 +74,7 @@ export class Emoji {
      * Returns fancy name of this emoji
      */
     public get fancyName() {
-        return `:${this.name.replace(/\W/, "_").toLowerCase()}:`;
+        return `:${this.name.replace(/\W/g, "_").toLowerCase()}:`;
     }
 
     /**
